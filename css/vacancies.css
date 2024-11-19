@@ -1,0 +1,53 @@
+
+.search-section {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    border-radius: 10px;
+}
+.job-card {
+    transition: transform 0.2s;
+    border: 1px solid #dee2e6;
+}
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.filter-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.salary-range {
+    color: #28a745;
+    font-weight: 500;
+}
+.location-badge {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+.job-type-badge {
+    background-color: #cff4fc;
+    color: #055160;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+.requirements-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.requirements-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.requirements-list li::before {
+    content: "\u2022";
+    position: absolute;
+    left: 0;
+    color: #0d6efd;
+}
