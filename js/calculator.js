@@ -1,4 +1,3 @@
-
 document.getElementById('calculatorForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -64,11 +63,11 @@ document.getElementById('calculatorForm').addEventListener('submit', function(e)
     const hourlyTakeHome = weeklyTakeHome / hoursPerWeek;
 
     // Update results
-    document.getElementById('yearlyPay').textContent = `\u00a3${annualTakeHome.toFixed(2)}`;
-    document.getElementById('monthlyPay').textContent = `\u00a3${monthlyTakeHome.toFixed(2)}`;
-    document.getElementById('weeklyPay').textContent = `\u00a3${weeklyTakeHome.toFixed(2)}`;
-    document.getElementById('hourlyPay').textContent = `\u00a3${hourlyTakeHome.toFixed(2)}`;
-    document.getElementById('incomeTax').textContent = `\u00a3${incomeTax.toFixed(2)}`;
+    document.getElementById('yearlyPay').textContent = `£${annualTakeHome.toFixed(2)}`;
+    document.getElementById('monthlyPay').textContent = `£${monthlyTakeHome.toFixed(2)}`;
+    document.getElementById('weeklyPay').textContent = `£${weeklyTakeHome.toFixed(2)}`;
+    document.getElementById('hourlyPay').textContent = `£${hourlyTakeHome.toFixed(2)}`;
+    document.getElementById('incomeTax').textContent = `£${incomeTax.toFixed(2)}`;
     document.getElementById('nationalInsurance').textContent = `\u00a3${ni.toFixed(2)}`;
 
     // Show results

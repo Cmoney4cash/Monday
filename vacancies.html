@@ -3,212 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Vacancy Search</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Job Search</title>
     <link rel="stylesheet" href="css/vacancies.css">
+
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Career Portal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="takehome.html">Salary Calculator</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="vacancies.html">Job Search</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+
+<body onload="recent()">
+    <header>
+        <h1>Job Search & Salary Calculator</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="takehome.html">Salary Calculator</a></li>
+            <li><a href="vacancies.html">Job Search</a></li>
+        </ul>
     </nav>
 
-    <!-- Search Section -->
-    <section class="search-section mb-5">
-        <div class="container">
-            <h1 class="text-center mb-4">Find Your Next Career Opportunity</h1>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <form id="searchForm">
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Job title or keywords" id="keywords">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" class="form-control" placeholder="Location" id="location">
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select" id="jobType">
-                                    <option value="">All Job Types</option>
-                                    <option value="full-time">Full Time</option>
-                                    <option value="part-time">Part Time</option>
-                                    <option value="contract">Contract</option>
-                                    <option value="temporary">Temporary</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary w-100">Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="search-container">
+        <div class="form-group">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" placeholder="Enter job title (e.g., Software Engineer, Data Scientist)">
         </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Filters -->
-            <div class="col-md-3">
-                <div class="filter-section mb-4">
-                    <h4 class="mb-3">Filters</h4>
-                    
-                    <div class="mb-4">
-                        <h5>Salary Range</h5>
-                        <select class="form-select" id="salaryRange">
-                            <option value="">Any</option>
-                            <option value="0-20000">Up to \u00a320,000</option>
-                            <option value="20000-30000">\u00a320,000 - \u00a330,000</option>
-                            <option value="30000-40000">\u00a330,000 - \u00a340,000</option>
-                            <option value="40000-50000">\u00a340,000 - \u00a350,000</option>
-                            <option value="50000+">\u00a350,000+</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5>Experience Level</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="entry" id="entry">
-                            <label class="form-check-label" for="entry">Entry Level</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="mid" id="mid">
-                            <label class="form-check-label" for="mid">Mid Level</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="senior" id="senior">
-                            <label class="form-check-label" for="senior">Senior Level</label>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5>Posted Date</h5>
-                        <select class="form-select" id="postedDate">
-                            <option value="">Any time</option>
-                            <option value="24h">Last 24 hours</option>
-                            <option value="7d">Last 7 days</option>
-                            <option value="14d">Last 14 days</option>
-                            <option value="30d">Last 30 days</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job Listings -->
-            <div class="col-md-9">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4>Available Positions</h4>
-                    <div class="dropdown">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
-                            Sort by
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Most Recent</a></li>
-                            <li><a class="dropdown-item" href="#">Salary: High to Low</a></li>
-                            <li><a class="dropdown-item" href="#">Salary: Low to High</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Sample Job Cards -->
-                <div class="job-card card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <h5 class="card-title">Senior Software Engineer</h5>
-                                <p class="card-subtitle mb-2 text-muted">Tech Solutions Ltd</p>
-                            </div>
-                            <span class="salary-range">\u00a355,000 - \u00a370,000</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="location-badge me-2"><i class="bi bi-geo-alt"></i> London</span>
-                            <span class="job-type-badge"><i class="bi bi-clock"></i> Full Time</span>
-                        </div>
-                        <p class="card-text">We are seeking an experienced Software Engineer to join our growing team...</p>
-                        <h6>Requirements:</h6>
-                        <ul class="requirements-list mb-3">
-                            <li>5+ years of experience in software development</li>
-                            <li>Strong knowledge of Python and JavaScript</li>
-                            <li>Experience with cloud platforms (AWS/Azure)</li>
-                        </ul>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary">Apply Now</button>
-                            <small class="text-muted">Posted 2 days ago</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="job-card card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <h5 class="card-title">Marketing Manager</h5>
-                                <p class="card-subtitle mb-2 text-muted">Global Marketing Inc</p>
-                            </div>
-                            <span class="salary-range">\u00a340,000 - \u00a350,000</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="location-badge me-2"><i class="bi bi-geo-alt"></i> Manchester</span>
-                            <span class="job-type-badge"><i class="bi bi-clock"></i> Full Time</span>
-                        </div>
-                        <p class="card-text">Looking for a dynamic Marketing Manager to lead our marketing initiatives...</p>
-                        <h6>Requirements:</h6>
-                        <ul class="requirements-list mb-3">
-                            <li>Bachelor's degree in Marketing or related field</li>
-                            <li>3+ years of marketing experience</li>
-                            <li>Strong digital marketing skills</li>
-                        </ul>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-primary">Apply Now</button>
-                            <small class="text-muted">Posted 5 days ago</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pagination -->
-                <nav aria-label="Job listings pagination">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter location (e.g., San Francisco, Remote)">
         </div>
+        <button onclick="searchJobs()">Search Jobs</button>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2024 Career Services Portal. All rights reserved.</p>
-        </div>
+    <div id="results" class="job-listings"></div>
+    <footer>
+        <p>&copy; 2024 Job Search & Salary Calculator. All rights reserved.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="js/vacancies.js"></script>
+
 </body>
 </html>

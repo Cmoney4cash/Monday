@@ -3,83 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Services Portal</title>
-    <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Job Search & Salary Calculator</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Career Portal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="takehome.html">Salary Calculator</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vacancies.html">Job Search</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <header>
+        <h1>Job Search & Salary Calculator</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="takehome.html">Salary Calculator</a></li>
+            <li><a href="vacancies.html">Job Search</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero  -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Career Services Portal</h1>
-            <p class="lead">Your one-stop destination for career planning and job search</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Find Your Dream Job & Calculate Your Take-Home Pay</h1>
+            <p>Your one-stop solution for job searching and salary calculations</p>
+        </section>
 
-    <!-- Features  -->
-    <section class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Salary Calculator</h3>
-                        <p class="card-text">Calculate your take-home pay with our advanced calculator. Account for taxes, National Insurance, and other deductions.</p>
-                        <a href="takehome.html" class="btn btn-primary">Calculate Now</a>
-                    </div>
-                </div>
+        <section class="features">
+            <div class="feature-card">
+                <h3>Take-Home Pay Calculator</h3>
+                <p>Calculate your net income after tax and National Insurance deductions</p>
+                <a href="takehome.html" class="cta-button">Calculate Now</a>
             </div>
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Job Search</h3>
-                        <p class="card-text">Search through thousands of job vacancies across the UK. Find your next career opportunity today.</p>
-                        <a href="vacancies.html" class="btn btn-primary">Search Jobs</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Career Resources</h3>
-                        <p class="card-text">Access valuable career resources, guides, and tips to help you succeed in your professional journey.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2024 Career Services Portal. All rights reserved.</p>
-        </div>
+            <div class="feature-card">
+                <h3>Job Search</h3>
+                <p>Search through thousands of job vacancies across the UK</p>
+                <a href="vacancies.html" class="cta-button">Search Jobs</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>Career Information</h3>
+                <p>Get detailed information about different job roles and requirements</p>
+                <a href="vacancies.html" class="cta-button">Learn More</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Search & Salary Calculator. All rights reserved.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-   
 </body>
 </html>
